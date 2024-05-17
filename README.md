@@ -10,6 +10,16 @@ VSCode 拡張機能 [Markdown+Math](https://marketplace.visualstudio.com/items?i
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/mdmath/style.css">
 ```
 
+## デモ
+
+- [Markdown](https://github.com/kuroyei/Markdown-CSS/tree/main/mdmath/example.md)
+- [HTML](https://kuroyei.com/demo/Markdown-CSS/mdmath/example.html)
+- [PDF](https://kuroyei.com/demo/Markdown-CSS/mdmath/example.pdf)
+
+## 印刷時の注意
+
+オプション「背景のグラフィック」を有効にすること．
+
 ## 独自のタグ
 
 - **タイトル**
@@ -63,7 +73,7 @@ VSCode 拡張機能 [Markdown+Math](https://marketplace.visualstudio.com/items?i
     </div>
     ```
 
-- 改ページする
+- その場で改ページする
 
     ```html
     <div style="page-break-after: always;"></div>
@@ -83,7 +93,9 @@ VSCode 拡張機能 [Markdown+Math](https://marketplace.visualstudio.com/items?i
           theme: 'defalt'
       });
     </script>
+    ```
 
+    ```html
     <div class="mermaid">
     graph LR;
         A-->B;
