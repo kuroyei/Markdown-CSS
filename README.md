@@ -12,6 +12,8 @@ VSCode 拡張機能 [Markdown+Math](https://marketplace.visualstudio.com/items?i
 
 ## デモ
 
+Markdown でレポートを書く方法を記述している．
+
 - [Markdown](https://github.com/kuroyei/Markdown-CSS/tree/main/mdmath/example.md)
 - [HTML](https://kuroyei.com/demo/Markdown-CSS/mdmath/example.html)
 - [PDF](https://kuroyei.com/demo/Markdown-CSS/mdmath/example.pdf)
