@@ -14,6 +14,11 @@ pre > code {
     font-size: 85% !important;
 }
 
+/* mermaid */
+pre.mermaid {
+    background-color: unset;
+}
+
 blockquote {
     color: currentColor !important;
 }
