@@ -87,20 +87,25 @@ VSCode 拡張機能 [Markdown+Math](https://marketplace.visualstudio.com/items?i
 
     ```html
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>
-      mermaid.initialize({
-          startOnLoad: true, 
-          theme: 'defalt'
-      });
-    </script>
     ```
 
     ```html
-    <div class="mermaid">
+    <pre class="mermaid">
     graph LR;
         A-->B;
         A-->C;
         B-->D;
         C-->D;
-    </div>
+    </pre>
     ```
+
+    ただし生成された HTML では Syntax error が発生する場合がある．
+
+    `mermaid.min.js` を読み込む代わりに VSCode 拡張機能 [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) をインストールすると得られる `index.bundle.js` (e.g., `"C:\Users\user\.vscode\extensions\bierner.markdown-mermaid-1.23.0\dist-preview\index.bundle.js"`) を次のように読み込むと表示できる．
+
+    ```html
+    <script defer src="index.bundle.js"></script>
+    ```
+
+    [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) ではこの JavaScript を用いて Mermaid を表示しているようだ．
+
