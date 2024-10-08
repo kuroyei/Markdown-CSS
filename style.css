@@ -69,6 +69,17 @@ blockquote {
 }
 
 /*-------------------------
+  画像
+-------------------------*/
+figure {
+    display: table;
+}
+
+figure img {
+    width: 100%;
+}
+
+/*-------------------------
   2カラム
 -------------------------*/
 .column-wrapper {
@@ -82,6 +93,17 @@ blockquote {
 
 .column-right {
     flex-basis: 47.5%;
+}
+
+/*-------------------------
+  改ページ
+-------------------------*/
+.avoid-break {
+    break-inside: avoid;
+}
+
+.break-after {
+    page-break-after: always;
 }
 
 /*-------------------------
