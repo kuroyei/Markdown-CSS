@@ -1,0 +1,48 @@
+name: Update GitHub Markdown CSS
+
+on:
+  schedule:
+    - cron: "0 0 */2 * *" # 2日に1回確認
+  workflow_dispatch: # 手動実行も可能
+
+jobs:
+  check_for_updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v3
+
+      - name: Get latest CSS from GitHub
+        run: curl -o current_github_markdown_light.css https://raw.githubusercontent.com/sindresorhus/github-markdown-css/main/github-markdown-light.css
+
+      - name: Get previous CSS
+        run: |
+          if [ -f sindresorhus_github-markdown-css_github-markdown-light.css ]; then
+            cp sindresorhus_github-markdown-css_github-markdown-light.css previous_github_markdown_light.css
+          else
+            touch previous_github_markdown_light.css
+          fi
+
+      - name: Compare CSS files
+        id: compare
+        run: |
+          if cmp -s "current_github_markdown_light.css" "previous_github_markdown_light.css"; then
+            echo "::set-output name=css_changed::false"
+          else
+            echo "::set-output name=css_changed::true"
+          fi
+
+      - name: Process and update CSS if changed
+        if: steps.compare.outputs.css_changed == 'true'
+        run: |
+          # .markdown- をすべて削除
+          sed 's/\.markdown-//g' current_github_markdown_light.css > sindresorhus_github-markdown-css_github-markdown-light.css
+
+          # Git の設定
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+
+          # リポジトリにファイルをコミット
+          git add sindresorhus_github-markdown-css_github-markdown-light.css
+          git commit -m "update: github-markdown-light.css (remove .markdown-)"
+          git push
