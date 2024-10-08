@@ -111,35 +111,35 @@ Visual Studio Code の拡張機能により Markdown から生成した HTML に
 
     <table>
     <thead>
-        <tr>
-            <th>Find [<code>.*</code>]</th>
-            <th>Replace</th>
-        </tr>
+    <tr>
+    <th>Find [<code>.*</code>]</th>
+    <th>Replace</th>
+    </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
+    <tr>
+    <td>
 
-                ```regex
-                !\[(.*)\]\((.*?)\)
-                ```
+    ```regex
+    !\[(.*)\]\((.*?)\)
+    ```
 
-            </td>
-            <td>
+    </td>
+    <td>
 
-                ```html
-                <figure style="width: 70%">
-                <img src="$2" alt="$1">
-                <figcaption>
+    ```html
+    <figure style="width: 70%">
+    <img src="$2" alt="$1">
+    <figcaption>
 
-                $1
+    $1
 
-                </figcaption>
-                </figure>
-                ```
+    </figcaption>
+    </figure>
+    ```
 
-            </td>
-        </tr>
+    </td>
+    </tr>
     </tbody>
     </table>
 
@@ -152,4 +152,4 @@ Visual Studio Code の拡張機能により Markdown から生成した HTML に
 
 ## ロードマップ
 
-- [ ] $\KaTeX$ の mhchem extension に対応する
+- [ ] KaTeX の mhchem extension に対応する
