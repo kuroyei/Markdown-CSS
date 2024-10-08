@@ -1,20 +1,22 @@
-:root {
-    --A4-height: 297mm;
-    --A4-width: 210mm;
-}
-
 /*-------------------------
   フォント
 -------------------------*/
 :root {
     --font-base: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif, "Segoe UI Emoji";
     --font-code: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace, "Segoe UI Emoji";
+    --font-size-codeblock: 85%;
 }
 
 body {
     font-family: var(--font-base);
 }
 
+.mono {
+    font-family: var(--font-code);
+}
+
+/* KaTeX
+-------------------------*/
 .mathsf,
 .textsf {
     font-family: var(--font-base) !important;
@@ -26,23 +28,30 @@ body {
     font-size: initial !important;
 }
 
+/* コードブロック
+-------------------------*/
+pre>code {
+    font-size: var(--font-size-codeblock) !important;
+}
+
 /*-------------------------
   文書名・著者名・日付
 -------------------------*/
-h1,
-address,
-time {
+#title,
+#author,
+#date {
     display: block;
     text-align: center;
-    line-height: 2.5;
+    font-style: normal;
 }
 
 h1 {
     border-bottom: unset !important;
 }
 
-address {
-    font-style: normal;
+#author,
+#date {
+    line-height: 2.5;
 }
 
 /*-------------------------
@@ -50,7 +59,6 @@ address {
 -------------------------*/
 pre>code {
     white-space: pre-wrap !important;
-    font-size: 85% !important;
 }
 
 /*-------------------------
