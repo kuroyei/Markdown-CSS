@@ -79,6 +79,10 @@ figure img {
     width: 100%;
 }
 
+figure figcaption {
+    font-size: small;
+}
+
 /*-------------------------
   2カラム
 -------------------------*/
