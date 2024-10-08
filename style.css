@@ -51,7 +51,7 @@ pre>code {
 
 #author,
 #date {
-    line-height: 2.5;
+    margin-bottom: 16px;
 }
 
 /*-------------------------
@@ -72,15 +72,21 @@ blockquote {
   画像
 -------------------------*/
 figure {
-    display: table;
+    display: table !important;
+    margin: 0.5em auto !important;
 }
 
-figure img {
+figure > img {
     width: 100%;
+    display: block;
+    margin: 0 auto;
+    page-break-inside: avoid;
 }
 
 figure figcaption {
     font-size: small;
+    display: block;
+    margin-top: 0.5em;
 }
 
 /*-------------------------
@@ -91,12 +97,11 @@ figure figcaption {
     justify-content: space-between;
 }
 
-.column-left {
-    flex-basis: 47.5%;
-}
-
-.column-right {
-    flex-basis: 47.5%;
+/*-------------------------
+  Mermaid
+-------------------------*/
+.mermaid {
+    text-align: center;
 }
 
 /*-------------------------
