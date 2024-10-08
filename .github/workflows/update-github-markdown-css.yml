@@ -46,7 +46,7 @@ jobs:
             
             # リポジトリにファイルをコミット
             git add sindresorhus_github-markdown-css_github-markdown-light.css
-            git commit -m "Update github-markdown-light.css (remove .markdown-)"
+            git commit -m "update: github-markdown-light.css (remove .markdown-)"
             git push
           else
             echo "No updates found for github-markdown-light.css"
