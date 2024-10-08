@@ -42,8 +42,7 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
 
-          # Personal Access Token (PAT) を使用してプッシュ
-          git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/kuroyei/Markdown-CSS.git
+          # リポジトリにファイルをコミット
           git add sindresorhus_github-markdown-css_github-markdown-light.css
           git commit -m "Update github-markdown-light.css (remove .markdown-)"
           git push
