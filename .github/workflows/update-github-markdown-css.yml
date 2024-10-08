@@ -33,16 +33,20 @@ jobs:
           fi
 
       - name: Process and update CSS if changed
-        if: steps.compare.outputs.css_changed == 'true'
         run: |
-          # .markdown- をすべて削除
-          sed 's/\.markdown-//g' current_github_markdown_light.css > sindresorhus_github-markdown-css_github-markdown-light.css
-
-          # Git の設定
-          git config --global user.name "GitHub Action"
-          git config --global user.email "action@github.com"
-
-          # リポジトリにファイルをコミット
-          git add sindresorhus_github-markdown-css_github-markdown-light.css
-          git commit -m "Update github-markdown-light.css (remove .markdown-)"
-          git push
+          if [ "${{ steps.compare.outputs.css_changed }}" = "true" ]; then
+            # .markdown- をすべて削除
+            sed 's/\.markdown-//g' current_github_markdown_light.css > sindresorhus_github-markdown-css_github-markdown-light.css
+            
+            # Git の設定
+            git config --global user.name "GitHub Action"
+            git config --global user.email "action@github.com"
+            
+            # Personal Access Token (PAT) を使用してプッシュ
+            git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/kuroyei/Markdown-CSS.git
+            git add sindresorhus_github-markdown-css_github-markdown-light.css
+            git commit -m "Update github-markdown-light.css (remove .markdown-)"
+            git push
+          else
+            echo "No updates found for github-markdown-light.css"
+          fi
