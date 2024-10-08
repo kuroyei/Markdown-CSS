@@ -8,7 +8,6 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 - [HTML](https://kuroyei.com/demo/Markdown-CSS/demo.html)
 - [PDF](https://kuroyei.com/demo/Markdown-CSS/demo.pdf)
 
-
 ## インストール
 
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
@@ -76,12 +75,12 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 
     ```html
     <div class="column-wrapper">
-    <div class="column-left">
+    <div style="flex-basis: 47.5%;">
 
     左側のコンテンツ
 
     </div>
-    <div class="column-right">
+    <div style="flex-basis: 47.5%;">
 
     右側のコンテンツ
 
@@ -148,6 +147,11 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
     </tbody>
     </table>
 
+## 注意
+
+- 印刷時はオプション「背景のグラフィック」を有効にすること．
+- jsDelivr から取得される CSS が更新されない場合は [Purge CDN cache - jsDelivr](https://www.jsdelivr.com/tools/purge) にてリンクを貼り付け [Purge now] する．
+
 ## 記法
 
 - [基本的な書き方とフォーマットの構文 - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
@@ -158,3 +162,4 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 ## ロードマップ
 
 - [ ] KaTeX の mhchem extension に対応する
+- [ ] Noto Color Emoji を印刷できるようにする
