@@ -1,6 +1,6 @@
 # Markdown CSS
 
-Visual Studio Code の拡張機能により Markdown から生成した HTML に適用するための CSS である．レポートの作成に使用することを想定している．
+Visual Studio Code の拡張機能「Markdown All in One」により Markdown から生成した HTML に対して適用するための CSS である．レポートの作成に使用することを想定している．
 
 ## デモ
 
@@ -29,7 +29,6 @@ Visual Studio Code の拡張機能により Markdown から生成した HTML に
 次のコードを Markdown の先頭に貼り付ける．
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/mhchem.min.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/sindresorhus_github-markdown-css_github-markdown-light.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/style.css">
 
@@ -46,6 +45,9 @@ Visual Studio Code の拡張機能により Markdown から生成した HTML に
 }
 </style>
 ```
+
+> [!NOTE]
+> 自身でフォント等を変更したい場合は `<style>` を編集する．
 
 ## 独自の要素
 
