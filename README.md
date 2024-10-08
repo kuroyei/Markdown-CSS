@@ -1,52 +1,73 @@
 # Markdown CSS
 
-VSCode 拡張機能 [Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath) で生成した HTML に適用するための CSS である．
-
-## 使用方法
-
-次のコードを Markdown ファイルに貼りつける．
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/mdmath/style.css">
-```
+Visual Studio Code の拡張機能により Markdown から生成した HTML に適用するための CSS である．レポートの作成に使用することを想定している．
 
 ## デモ
 
-Markdown でレポートを書く方法を記述している．
 
-- [Markdown](https://github.com/kuroyei/Markdown-CSS/tree/main/mdmath/example.md)
-- [HTML](https://kuroyei.com/demo/Markdown-CSS/mdmath/example.html)
-- [PDF](https://kuroyei.com/demo/Markdown-CSS/mdmath/example.pdf)
 
-## 印刷時の注意
+## インストール
 
-オプション「背景のグラフィック」を有効にすること．
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+- [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) (for Mermaid ダイアグラム)
+- [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji) (for 絵文字)
+- [Markdown Footnotes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes) (for 脚注)
 
-## 独自のタグ
+## 設定
 
-- **タイトル**
+<kbd>Ctrl</kbd> + <kbd>,</kbd> により VSCode の設定を開き、拡張機能 Markdown All in One について次のように設定する．
+
+```json
+{
+  "markdown.extension.print.absoluteImgPath": false,
+  "markdown.extension.print.includeVscodeStylesheets": false
+}
+```
+
+## 使用方法
+
+次のコードを Markdown の先頭に貼り付ける．
+
+```html
+<script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/mhchem.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/sindresorhus_github-markdown-css_github-markdown-light.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/style.css">
+
+<style>
+:root {
+    /* 基本的なフォントファミリー */
+    /* --font-base: ; */
+
+    /* 等幅フォントファミリー */
+    /* --font-code: ; */
+
+    /* コードブロックのフォントサイズ */
+    /* --font-size-codeblock: ; */
+}
+</style>
+```
+
+## 独自の要素
+
+- 文書名・著者名・日付
 
     ```html
-    <div id="title">
-
-    タイトル
-
-    </div>
+    <h1 id="title">
+    Markdown でレポートを書こう
+    </h1>
+    <address id="author">
+    <span class="mono">4I14</span> &emsp; 黒江 遺産
+    </address>
+    <time id="date">
+    2024年10月8日
+    </time>
     ```
 
-- **著者と日付**
+- 等幅フォントで表示
 
-    ```html
-    <div id="author-date">
+    `class="mono"` を指定する．
 
-    3年17席 &emsp; 黒江 遺産
-
-    2024年 5月 16日
-
-    </div>
-    ```
-
-- **2カラム**
+- 2カラム
 
     ```html
     <div class="column-wrapper">
@@ -63,12 +84,10 @@ Markdown でレポートを書く方法を記述している．
     </div>
     ```
 
-## その他
-
-- 途中の改ページを防ぐ
+- 途中で改ページさせない
 
     ```html
-    <div style="break-inside: avoid">
+    <div class="avoid-break">
 
     印刷時に改ページさせたくないコンテンツ
 
@@ -78,36 +97,59 @@ Markdown でレポートを書く方法を記述している．
 - その場で改ページする
 
     ```html
-    <div style="page-break-after: always;"></div>
+    <div class="break-after"></div>
     ```
 
-- 目次の作成
-  
-    VSCode 拡張機能 [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) を用いる．
+## 置換
 
-- Mermaid を埋め込む
+> [!NOTE]
+> [`.*`] は正規表現を用いることを意味する．
 
-    ```html
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    ```
+- 画像
 
-    ```html
-    <pre class="mermaid">
-    graph LR;
-        A-->B;
-        A-->C;
-        B-->D;
-        C-->D;
-    </pre>
-    ```
+    画像の幅を調整できるようにする．また、画像の下にキャプションが表示されるようにする．
 
-    ただし生成された HTML では Syntax error が発生する場合がある．
+    <table>
+    <thead>
+        <tr>
+            <th>Find [<code>.*</code>]</th>
+            <th>Replace</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
 
-    `mermaid.min.js` を読み込む代わりに VSCode 拡張機能 [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) をインストールすると得られる `index.bundle.js` (e.g., `"C:\Users\user\.vscode\extensions\bierner.markdown-mermaid-1.23.0\dist-preview\index.bundle.js"`) を次のように読み込むと表示できる．
+                ```regex
+                !\[(.*)\]\((.*?)\)
+                ```
 
-    ```html
-    <script defer src="index.bundle.js"></script>
-    ```
+            </td>
+            <td>
 
-    [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) ではこの JavaScript を用いて Mermaid を表示しているようだ．
+                ```html
+                <figure style="width: 70%">
+                <img src="$2" alt="$1">
+                <figcaption>
 
+                $1
+
+                </figcaption>
+                </figure>
+                ```
+
+            </td>
+        </tr>
+    </tbody>
+    </table>
+
+## 記法
+
+- [基本的な書き方とフォーマットの構文 - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [情報を表に編成する - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables)
+- [コードブロックの作成と強調表示 - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)
+- [ダイアグラムの作成 - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)
+
+## ロードマップ
+
+- [ ] $\KaTeX$ の mhchem extension に対応する
