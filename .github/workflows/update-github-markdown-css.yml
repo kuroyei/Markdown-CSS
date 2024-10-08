@@ -27,9 +27,9 @@ jobs:
         id: compare
         run: |
           if cmp -s "current_github_markdown_light.css" "previous_github_markdown_light.css"; then
-            echo "::set-output name=css_changed::false"
+            echo "css_changed=false" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=css_changed::true"
+            echo "css_changed=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Process and update CSS if changed
