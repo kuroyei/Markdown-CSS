@@ -1,0 +1,166 @@
+:root {
+    --A4-height: 297mm;
+    --A4-width: 210mm;
+}
+
+/*-------------------------
+  フォント
+-------------------------*/
+:root {
+    --font-base: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif, "Segoe UI Emoji";
+    --font-code: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace, "Segoe UI Emoji";
+}
+
+body {
+    font-family: var(--font-base);
+}
+
+.mathsf,
+.textsf {
+    font-family: var(--font-base) !important;
+}
+
+.mathtt,
+.texttt {
+    font-family: var(--font-code) !important;
+    font-size: initial !important;
+}
+
+/*-------------------------
+  文書名・著者名・日付
+-------------------------*/
+h1,
+address,
+time {
+    display: block;
+    text-align: center;
+    line-height: 2.5;
+}
+
+h1 {
+    border-bottom: unset !important;
+}
+
+address {
+    font-style: normal;
+}
+
+/*-------------------------
+  コードブロック
+-------------------------*/
+pre>code {
+    white-space: pre-wrap !important;
+    font-size: 85% !important;
+}
+
+/*-------------------------
+  引用
+-------------------------*/
+blockquote {
+    color: currentColor !important;
+}
+
+/*-------------------------
+  2カラム
+-------------------------*/
+.column-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column-left {
+    flex-basis: 47.5%;
+}
+
+.column-right {
+    flex-basis: 47.5%;
+}
+
+/*-------------------------
+  スクロールバー
+-------------------------*/
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/*-------------------------
+  警告
+-------------------------*/
+:root {
+    --color-note: #0969da;
+    --color-tip: #1a7f37;
+    --color-warning: #9a6700;
+    --color-severe: #bc4c00;
+    --color-caution: #d1242f;
+    --color-important: #8250df;
+}
+
+.markdown-alert {
+    padding: 0.5rem 1rem;
+    margin-bottom: 16px;
+    color: inherit;
+    border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+    margin-top: 0
+}
+
+.markdown-alert>:last-child {
+    margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+    margin-right: 0.5rem;
+    display: inline-block;
+    overflow: visible !important;
+    vertical-align: text-bottom;
+    fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+    border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+    color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+    border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+    color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+    border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+    color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+    border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+    color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+    border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+    color: var(--color-caution);
+}
