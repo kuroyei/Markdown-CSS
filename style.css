@@ -90,6 +90,17 @@ figure figcaption {
 }
 
 /*-------------------------
+  脚注
+-------------------------*/
+body .footnotes {
+    border-top: none;
+}
+
+body .footnotes li:target::before {
+    border: none;
+}
+
+/*-------------------------
   2カラム
 -------------------------*/
 .column-wrapper {
