@@ -160,16 +160,16 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 
 ## KaTeX Macros
 
-@kuroyei が使用しているマクロをご紹介する．これらはユーザー辞書に登録すると便利である．
+[**@kuroyei**](https://github.com/kuroyei) が使用しているマクロをご紹介する．これらはユーザー辞書に登録すると便利である．
 
 | 目的 | マクロ | 出力例 |
 | --- | --- | --- |
 | 文字の大きさを本文と同じにする | `\newcommand\ntsize[1]{{\footnotesize #1}}` | |
-| 単位 | `\def\unit#1{\,\mathrm{\scriptsize [{#1}]}}` | $\def\unit#1{\,\mathrm{\scriptsize [{#1}]}} 1 \unit{kg \cdot m/s^2}$ |
-| ネイピア数 | `\def\e{\mathrm{e}}` | $\def\e{\mathrm{e}} \e$ |
-| 微分、微小量 | `\def\d{\mathrm{d}}` | $\def\d{\mathrm{d}} \d x$ |
-| フーリエ変換 | `\def\fourier{\mathcal{F}}` | $\def\fourier{\mathcal{F}}\def\e{\mathrm{e}}\def\d{\mathrm{d}} \displaystyle F(\omega) = \fourier[f(t)] = \int_{-\infty}^\infty f(t)\e^{-i\omega t}\,\d t$ |
-| ラプラス変換 | `\def\laplace{\mathcal{L}}` | $\def\laplace{\mathcal{L}}\def\e{\mathrm{e}}\def\d{\mathrm{d}} \displaystyle F(s) = \laplace[f(t)] = \int_0^\infty \e^{-st} f(t)\, \d t$ |
+| 単位 | `\def\unit#1{\,\mathrm{\scriptsize [{#1}]}}` | $1 \,\mathrm{\scriptsize [kg \cdot m/s^2]}$ |
+| ネイピア数 | `\def\e{\mathrm{e}}` | $\mathrm{e}$ |
+| 微分、微小量 | `\def\d{\mathrm{d}}` | $\mathrm{d}x$ |
+| フーリエ変換 | `\def\fourier{\mathcal{F}}` | $\displaystyle F(\omega) = \mathcal{F}[f(t)] = \int_{-\infty}^\infty f(t)\mathrm{e}^{-i\omega t}\,\mathrm{d} t$ |
+| ラプラス変換 | `\def\laplace{\mathcal{L}}` | $\displaystyle F(s) = \mathcal{L}[f(t)] = \int_0^\infty \mathrm{e}^{-st} f(t)\, \mathrm{d}t$ |
 
 
 ## 注意
