@@ -36,7 +36,7 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 
 <style>
 :root {
-    /* 基本的なフォントファミリー */
+    /* 基本フォントファミリー */
     /* --font-base: ; */
 
     /* 等幅フォントファミリー */
@@ -146,6 +146,31 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
     </tr>
     </tbody>
     </table>
+
+## 数式中のフォント
+
+数式中に本文と同じフォントの文字を表示するには、次の命令を使用する．
+
+| フォント | 命令 |
+| --- | --- |
+| 基本フォントファミリー | `\textsf{}`, `\mathsf{}` |
+| 等幅フォントファミリー | `\texttt{}`, `\mathtt{}` |
+
+数式中に本文と同じ大きさの文字を表示するには、`\footnotesize` を使用します．
+
+## KaTeX Macros
+
+@kuroyei が使用しているマクロをご紹介する．これらはユーザー辞書に登録すると便利である．
+
+| 目的 | マクロ | 出力例 |
+| --- | --- | --- |
+| 文字の大きさを本文と同じにする | `\newcommand\ntsize[1]{{\footnotesize #1}}` | |
+| 単位 | `\def\unit#1{\,\mathrm{\scriptsize [{#1}]}}` | $\def\unit#1{\,\mathrm{\scriptsize [{#1}]}} 1 \unit{kg \cdot m/s^2}$ |
+| ネイピア数 | `\def\e{\mathrm{e}}` | $\def\e{\mathrm{e}} \e$ |
+| 微分、微小量 | `\def\d{\mathrm{d}}` | $\def\d{\mathrm{d}} \d x$ |
+| フーリエ変換 | `\def\fourier{\mathcal{F}}` | $\def\fourier{\mathcal{F}}\def\e{\mathrm{e}}\def\d{\mathrm{d}} \displaystyle F(\omega) = \fourier[f(t)] = \int_{-\infty}^\infty f(t)\e^{-i\omega t}\,\d t$ |
+| ラプラス変換 | `\def\laplace{\mathcal{L}}` | $\def\laplace{\mathcal{L}}\def\e{\mathrm{e}}\def\d{\mathrm{d}} \displaystyle F(s) = \laplace[f(t)] = \int_0^\infty \e^{-st} f(t)\, \d t$ |
+
 
 ## 注意
 
