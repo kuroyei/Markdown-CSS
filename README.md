@@ -2,6 +2,11 @@
 
 Visual Studio Code の拡張機能「Markdown All in One」により Markdown から生成した HTML に対して適用するための CSS である．レポートの作成に使用することを想定している．
 
+## コンテンツ
+
+- `style.css` : [**@kuroyei**](https://github.com/kuroyei) が作成したもの
+- `sindresorhus_github-markdown-css_github-markdown-light.css` : [sindresorhus/github-markdown-css/`github-markdown-light.css`](https://github.com/sindresorhus/github-markdown-css/blob/main/github-markdown-light.css) から文字列 `.markdown-` を取り除いたもの
+
 ## デモ
 
 - [Markdown](https://github.com/kuroyei/Markdown-CSS/blob/main/demo/demo.md?plain=1)
@@ -104,6 +109,33 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
     <div class="break-after"></div>
     ```
 
+- 中央揃えのキャプション付き表
+
+    表を次のタグで囲む．
+
+    ```html
+
+
+    ```html
+    <figure class="">
+    
+    ```
+
+    ```html
+
+    <figcaption>
+
+    </figcaption>
+    </figure>
+    ```
+
+    表中の padding を小さくしたい場合は、`figure` にクラス `compact` を指定する．つまり、開始タグを次のようにする．表が表示される大きさを小さくできる．
+
+    ```html
+    <figure class="compact">
+    
+    ```
+
 ## 置換
 
 > [!NOTE]
@@ -171,11 +203,23 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 | フーリエ変換 | `\def\fourier{\mathcal{F}}` | `\fourier[f(t)]` |
 | ラプラス変換 | `\def\laplace{\mathcal{L}}` | `\laplace[f(t)]` |
 
-
 ## 注意
 
 - 印刷時はオプション「背景のグラフィック」を有効にすること．
 - jsDelivr から取得される CSS が更新されない場合は [Purge CDN cache - jsDelivr](https://www.jsdelivr.com/tools/purge) にてリンクを貼り付け [Purge now] する．
+
+<!--
+
+## 配信状況
+
+jsDelivr から取得される CSS が最新であるか
+
+| CSS | 状態 |
+| --- | --- |
+| [`style.css`](https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/style.css) | |
+| [`sindresorhus_github-markdown-css_github-markdown-light.css`](https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/sindresorhus_github-markdown-css_github-markdown-light.css) | |
+
+-->
 
 ## 記法
 

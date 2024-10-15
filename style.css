@@ -69,14 +69,14 @@ blockquote {
 }
 
 /*-------------------------
-  画像
+  図表
 -------------------------*/
 figure {
     display: table !important;
     margin: 0.5em auto !important;
 }
 
-figure > img {
+figure > :where(img, table) {
     width: 100%;
     display: block;
     margin: 0 auto;
@@ -87,6 +87,18 @@ figure figcaption {
     font-size: small;
     display: block;
     margin-top: 0.5em;
+}
+
+figure:has(table).compact > table :where(th, td) {
+    padding: 0 0.5em;
+}
+
+/*-------------------------
+  リスト
+-------------------------*/
+li > p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 /*-------------------------
