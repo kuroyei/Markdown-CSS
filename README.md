@@ -209,7 +209,7 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 
 ## CSS が更新されない場合
 
-jsDelivr から取得される CSS が更新されない場合は [Purge CDN cache - jsDelivr](https://www.jsdelivr.com/tools/purge) にてリンクを貼り付け [Purge now] する．
+jsDelivr から取得される CSS が更新されない場合は [Purge CDN cache - jsDelivr](https://www.jsdelivr.com/tools/purge) にてリンクを貼り付け [Purge now] する．複数回試行しなければならない場合がある．
 
 <table>
 <thead>
@@ -222,7 +222,7 @@ jsDelivr から取得される CSS が更新されない場合は [Purge CDN cac
 <tr>
 <td>
 
-`style.css`
+[`style.css`](https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/style.css)
 
 </td>
 <td>
@@ -236,7 +236,7 @@ https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/style.css
 <tr>
 <td>
 
-`sindresorhus_github-markdown-css_github-markdown-light.css`
+[`sindresorhus_github-markdown-css_github-markdown-light.css`](https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/sindresorhus_github-markdown-css_github-markdown-light.css)
 
 </td>
 <td>
