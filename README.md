@@ -188,7 +188,7 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 | 基本フォントファミリー | `\textsf{}`, `\mathsf{}` |
 | 等幅フォントファミリー | `\texttt{}`, `\mathtt{}` |
 
-数式中に本文と同じ大きさの文字を表示するには、`\footnotesize` を使用します．
+数式中に本文と同じ大きさの文字を表示するには、`\footnotesize` を使用する．
 
 ## KaTeX Macros
 
