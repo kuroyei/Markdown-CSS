@@ -206,7 +206,49 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 ## 注意
 
 - 印刷時はオプション「背景のグラフィック」を有効にすること．
-- jsDelivr から取得される CSS が更新されない場合は [Purge CDN cache - jsDelivr](https://www.jsdelivr.com/tools/purge) にてリンクを貼り付け [Purge now] する．
+
+## CSS が更新されない場合
+
+jsDelivr から取得される CSS が更新されない場合は [Purge CDN cache - jsDelivr](https://www.jsdelivr.com/tools/purge) にてリンクを貼り付け [Purge now] する．
+
+<table>
+<thead>
+<tr>
+<th>CSS</th>
+<th>リンク</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`style.css`
+
+</td>
+<td>
+
+```plain text
+https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/style.css
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`sindresorhus_github-markdown-css_github-markdown-light.css`
+
+</td>
+<td>
+
+```plain text
+https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/sindresorhus_github-markdown-css_github-markdown-light.css
+```
+
+</td>
+</tr>
+</tbody>
+</table>
 
 <!--
 
