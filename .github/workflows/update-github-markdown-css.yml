@@ -2,7 +2,7 @@ name: Update GitHub Markdown CSS
 
 on:
   schedule:
-    - cron: "0 0 */2 * *" # 2日に1回確認
+    - cron: "0 0 1 * *" # 1か月に1回確認
   workflow_dispatch: # 手動実行も可能
 
 jobs:
