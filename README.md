@@ -202,6 +202,8 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 | 微分、微小量 | `\def\d{\mathrm{d}}` | `\d x` |
 | フーリエ変換 | `\def\fourier{\mathcal{F}}` | `\fourier[f(t)]` |
 | ラプラス変換 | `\def\laplace{\mathcal{L}}` | `\laplace[f(t)]` |
+| 順列 | `\newcommand\perm[2]{{}_{#1}\mathrm{P}_{#2}}` | `\perm{n}{r}` |
+| 組合せ | `\newcommand\comb[2]{{}_{#1}\mathrm{C}_{#2}}` | `\comb{n}{r}` |
 
 ## 注意
 
