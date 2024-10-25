@@ -2,6 +2,9 @@
 
 Visual Studio Code の拡張機能「Markdown All in One」により Markdown から生成した HTML に対して適用するための CSS である．レポートの作成に使用することを想定している．
 
+> [!NOTE]
+> 拡張機能によって生成される HTML が異なるため、他の拡張機能では機能しません．
+
 ## コンテンツ
 
 - `style.css` : [**@kuroyei**](https://github.com/kuroyei) が作成したもの
@@ -55,6 +58,10 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 
 > [!NOTE]
 > 自身でフォント等を変更したい場合は `<style>` を編集する．
+
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> でコマンドパレットを開き、`html` 等と検索して [Markdown All in One: Print current document to HTML] を実行する．
+
+生成された HTML を Web ブラウザで開き、PDF に印刷する．
 
 ## 独自の要素
 
@@ -276,3 +283,4 @@ jsDelivr から取得される CSS が最新であるか
 
 - [ ] KaTeX の mhchem extension に対応する
 - [ ] Noto Color Emoji を印刷できるようにする
+- [ ] Syntax Highlighting に対応する
