@@ -41,6 +41,7 @@ Visual Studio Code の拡張機能「Markdown All in One」により Markdown �
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/sindresorhus_github-markdown-css_github-markdown-light.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
 
 <style>
 :root {
@@ -283,4 +284,4 @@ jsDelivr から取得される CSS が最新であるか
 
 - [ ] KaTeX の mhchem extension に対応する
 - [ ] Noto Color Emoji を印刷できるようにする
-- [ ] Syntax Highlighting に対応する
+- [x] Syntax Highlighting に対応する
