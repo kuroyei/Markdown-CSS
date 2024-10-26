@@ -2,7 +2,7 @@
 
 Visual Studio Code の拡張機能「Markdown All in One」により Markdown から生成した HTML に対して適用するための CSS である．レポートの作成に使用することを想定している．
 
-> [!NOTE]
+> [!IMPORTANT]
 > 拡張機能によって生成される HTML が異なるため、他の拡張機能では機能しない．
 
 ## コンテンツ
@@ -284,4 +284,5 @@ jsDelivr から取得される CSS が最新であるか
 
 - [ ] KaTeX の mhchem extension に対応する
 - [ ] Noto Color Emoji を印刷できるようにする
+  - 絵文字を svg に置換する？
 - [x] Syntax Highlighting に対応する
