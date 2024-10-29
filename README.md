@@ -1,6 +1,6 @@
 # Markdown CSS
 
-Visual Studio Code の拡張機能「Markdown All in One」により Markdown から生成した HTML に対して適用するための CSS である．レポートの作成に使用することを想定している．
+レポート作成を想定した、VSCode の拡張機能「Markdown All in One」により Markdown から生成した HTML に対して適用するための CSS である．
 
 > [!IMPORTANT]
 > 拡張機能によって生成される HTML が異なるため、他の拡張機能では機能しない．
