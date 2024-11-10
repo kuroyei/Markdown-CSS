@@ -30,7 +30,8 @@
 ```json
 {
   "markdown.extension.print.absoluteImgPath": false,
-  "markdown.extension.print.includeVscodeStylesheets": false
+  "markdown.extension.print.includeVscodeStylesheets": false,
+  "markdown.extension.toc.levels": "2..6"
 }
 ```
 
@@ -69,9 +70,11 @@
 - 文書名・著者名・日付
 
     ```html
-    <h1 id="title">
-    Markdown でレポートを書こう
-    </h1>
+    <div id="title">
+    
+    # Markdown でレポートを書こう
+    
+    </div>
     <address id="author">
     <span class="mono">4I14</span> &emsp; 黒江 遺産
     </address>
@@ -213,9 +216,43 @@
 | 順列 | `\newcommand\perm[2]{{}_{#1}\mathrm{P}_{#2}}` | `\perm{n}{r}` |
 | 組合せ | `\newcommand\comb[2]{{}_{#1}\mathrm{C}_{#2}}` | `\comb{n}{r}` |
 
+## 記法
+
+- [基本的な書き方とフォーマットの構文 - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [情報を表に編成する - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables)
+- [コードブロックの作成と強調表示 - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)
+- [ダイアグラムの作成 - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)
+
 ## 注意
 
 - 印刷時はオプション「背景のグラフィック」を有効にすること．
+- Apple デバイスでは PDF で `box-shadow` が正常に表示されない
+  - `filter: blur(0);` 等を追加すれば影が描写されるが、画像の画質が下がる
+  - 回避策:
+
+    ```css
+    figure {
+        position: relative;
+        display: inline-block;
+    }
+    figure::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.35);
+        filter: blur(10px);
+        z-index: -1;
+        border-radius: 5px;
+    }
+    figure img {
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+    ```
 
 ## CSS が更新されない場合
 
@@ -272,13 +309,6 @@ jsDelivr から取得される CSS が最新であるか
 | [`sindresorhus_github-markdown-css_github-markdown-light.css`](https://cdn.jsdelivr.net/gh/kuroyei/Markdown-CSS/sindresorhus_github-markdown-css_github-markdown-light.css) | |
 
 -->
-
-## 記法
-
-- [基本的な書き方とフォーマットの構文 - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-- [情報を表に編成する - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables)
-- [コードブロックの作成と強調表示 - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)
-- [ダイアグラムの作成 - GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)
 
 ## ロードマップ
 

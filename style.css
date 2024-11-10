@@ -45,7 +45,7 @@ pre>code {
     font-style: normal;
 }
 
-#title {
+#title, #title h1 {
     border-bottom: unset !important;
 }
 
