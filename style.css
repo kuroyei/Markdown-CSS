@@ -45,7 +45,7 @@ pre>code {
     font-style: normal;
 }
 
-#title, #title h1 {
+#title, body #title h1 {
     border-bottom: unset !important;
 }
 
@@ -73,7 +73,7 @@ blockquote {
 -------------------------*/
 figure {
     display: table !important;
-    margin: 0.5em auto !important;
+    margin: 0.5rem auto 1rem !important;
 }
 
 figure > :where(img, table) {
