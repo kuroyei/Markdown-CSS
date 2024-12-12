@@ -94,14 +94,6 @@ figure:has(table).compact > table :where(th, td) {
 }
 
 /*-------------------------
-  リスト
--------------------------*/
-li > p {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-/*-------------------------
   脚注
 -------------------------*/
 body .footnotes {
