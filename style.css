@@ -100,6 +100,14 @@ body .footnotes {
     border-top: none;
 }
 
+body .footnotes ol {
+    padding-left: revert !important;
+}
+
+body .footnotes li:target {
+    color: revert;
+}
+
 body .footnotes li:target::before {
     border: none;
 }
