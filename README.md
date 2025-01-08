@@ -125,9 +125,6 @@
     表を次のタグで囲む．
 
     ```html
-
-
-    ```html
     <figure class="">
     
     ```
@@ -144,7 +141,6 @@
 
     ```html
     <figure class="compact">
-    
     ```
 
 ## 置換
